@@ -7,8 +7,6 @@ import _ "github.com/go-sql-driver/mysql"
 
 func main() {
 
-	fmt.Printf("No Connection\n")
-
 	db, err := sql.Open("mysql",
 		"xxx:xxx@tcp(127.0.0.1:3306)/test")
 
