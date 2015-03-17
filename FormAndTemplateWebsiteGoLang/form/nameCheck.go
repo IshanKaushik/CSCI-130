@@ -21,14 +21,14 @@ func main() {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
-	indexPage, err := ioutil.ReadFile("pages/index.html")
+	indexPage, err := ioutil.ReadFile("htmlPage/index.html")
 	if err != nil {
 		fmt.Fprint(w, "404 Not Found")
 	}
 	fmt.Fprint(w, string(indexPage))
 }
 
-var output, _ = ioutil.ReadFile("pages/checkResult.html")
+var output, _ = ioutil.ReadFile("htmlPage/checkResult.html")
 var ouputTemplate = template.Must(template.New("output").Parse(string(output)))
 
 func myResultDisplay(w http.ResponseWriter, r *http.Request) {
